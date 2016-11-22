@@ -1,6 +1,6 @@
 #include <unistd.h>
 #include <stdlib.h>
-#include "syscall.h"
+#include "stdio.h"
 
 static int fullbuf(int x, FILE *fp);
 static int linebuf(int x, FILE *fp);

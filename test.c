@@ -5,7 +5,7 @@
 	> Created Time: Fri 04 Nov 2016 09:20:53 PM CST
  ************************************************************************/
 
-#include "syscall.h"
+#include "stdio.h"
 
 int main(int argc, char *argv[]) {
     FILE *fp;

@@ -37,7 +37,6 @@ int fseek(FILE *fp, long offset, int origin);
 int fflush(FILE *fp);
 int _flushbuf(int x, FILE *fp);
 char *fgets(char *s, int size, FILE *stream);
-int ungetc(int c, FILE *stream);
 int getline(char *line, int max);
 FILE *fopen(char *, char *);
 int fclose(FILE *fp);

@@ -5,7 +5,7 @@
 	> Created Time: Sat 05 Nov 2016 04:28:22 PM CST
  ************************************************************************/
 
-#include "syscall.h"
+#include "stdio.h"
 
 /* Return the character written as an unsigned char 
  * cast to an int or EOF on error

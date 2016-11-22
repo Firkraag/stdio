@@ -5,7 +5,7 @@
 	> Created Time: Sat 05 Nov 2016 12:09:29 PM CST
  ************************************************************************/
 
-#include "syscall.h"
+#include "stdio.h"
 
 int fputs(const char *s, FILE *fp) 
 {

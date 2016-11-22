@@ -1,6 +1,6 @@
 #include <unistd.h>
 #include <stdlib.h>
-#include "syscall.h"
+#include "stdio.h"
 
 
 int fclose(FILE *fp) {

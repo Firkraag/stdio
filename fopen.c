@@ -2,7 +2,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-#include "syscall.h"
+#include "stdio.h"
 #define PERMS 0666
 
 FILE *fopen(char *name, char *mode) {

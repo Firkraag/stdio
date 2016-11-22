@@ -5,7 +5,7 @@
 	> Created Time: Sat 05 Nov 2016 11:25:09 AM CST
  ************************************************************************/
 
-#include "syscall.h"
+#include "stdio.h"
 
 /* fgets: get at most n chars from iop */
 char *fgets(char *s, int n, FILE *iop)

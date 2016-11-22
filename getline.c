@@ -5,7 +5,7 @@
 	> Created Time: Sat 05 Nov 2016 12:03:32 PM CST
  ************************************************************************/
 
-#include "syscall.h"
+#include "stdio.h"
 #include <string.h>
 
 /* getline: read a line, return length */

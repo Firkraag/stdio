@@ -1,5 +1,5 @@
 #include <unistd.h>
-#include "syscall.h"
+#include "stdio.h"
 
 static int flushOutput(FILE *fp);
 static int flushInput(FILE *fp);
