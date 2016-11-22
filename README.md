@@ -1,6 +1,7 @@
 # stdio
 
 Implementation of the following functions in the linux stdio library:
+
     - getc
     - getchar
     - getline
