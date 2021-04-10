@@ -12,16 +12,17 @@
 #define LINEBUF 1
 #define UNBUF 2
 
-
-struct _flags {
-    unsigned _READ : 1;
-    unsigned _WRITE : 1;
-    unsigned _BUFTYPE : 2;
-    unsigned _EOF : 1;
-    unsigned _ERR : 1;
+struct _flags
+{
+	unsigned _READ : 1;
+	unsigned _WRITE : 1;
+	unsigned _BUFTYPE : 2;
+	unsigned _EOF : 1;
+	unsigned _ERR : 1;
 };
 
-typedef struct _iobuf {
+typedef struct
+{
 	int cnt;
 	char *ptr;
 	char *base;
@@ -29,8 +30,7 @@ typedef struct _iobuf {
 	int fd;
 } FILE;
 
-
-extern FILE _iob[OPEN_MAX];
+extern FILE _iob[];
 int _fillbuf(FILE *);
 int _flushbuf(int, FILE *);
 int fseek(FILE *fp, long offset, int origin);
@@ -44,19 +44,18 @@ int fputs(const char *s, FILE *fp);
 int puts(const char *s);
 int putc(int c, FILE *fp);
 
-
-#define stdin  (&_iob[0])
+#define stdin (&_iob[0])
 #define stdout (&_iob[1])
 #define stderr (&_iob[2])
 
-#define feof(p)		((p)->flag._EOF)
-#define ferror(p)	((p)->flag._ERR)
-#define fileno(p)	((p)->fd)
+#define feof(p) ((p)->flag._EOF)
+#define ferror(p) ((p)->flag._ERR)
+#define fileno(p) ((p)->fd)
 
-#define getc(p)		(--(p)->cnt >= 0 \
-				?	(unsigned char) *(p)->ptr++ : _fillbuf(p))
+#define getc(p) (--(p)->cnt >= 0                  \
+					 ? (unsigned char)*(p)->ptr++ \
+					 : _fillbuf(p))
 //#define putc(x, p) (((--(p)->cnt < 0) || (((p) == stdout) && ((x) == '\n')))  ?	_flushbuf((x), p) : (*(p)->ptr++) = (x))
 
-#define getchar()	getc(stdin)
-#define putchar(x)	putc((x), stdout)
-
+#define getchar() getc(stdin)
+#define putchar(x) putc((x), stdout)
