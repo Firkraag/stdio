@@ -17,13 +17,10 @@ int _flushbuf(int x, FILE *fp) {
     switch(fp->flag._BUFTYPE) {
     case FULLBUF:
         return fullbuf(x, fp);
-        break;
     case LINEBUF:
         return linebuf(x, fp);
-        break;
     case UNBUF:
         return unbuf(x, fp);
-        break;
     }
     return EOF;
 }

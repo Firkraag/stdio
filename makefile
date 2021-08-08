@@ -5,7 +5,7 @@ LIB=libstdio.a
 OBJS = fclose.o fopen.o fflush.o fillbuf.o flushbuf.o fgets.o getline.o\
 	   fputs.o putc.o stdio.o fseek.o
 
-
+all: test
 test: test.o $(LIB)
 	$(CC) $(CFLAGS) -static -o $@ $^
 

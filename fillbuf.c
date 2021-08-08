@@ -3,7 +3,7 @@
 #include "stdio.h"
 
 int _fillbuf(FILE *fp) {
-	int bufsize;
+    int bufsize;
 
     if (!fp->flag._READ)
         return EOF;
@@ -14,22 +14,22 @@ int _fillbuf(FILE *fp) {
 
     if (fp->flag._BUFTYPE == UNBUF) {
         bufsize = 1;
-    }
-    else
+    } else {
         bufsize = BUFSIZ;
+    }
 
-	if (fp->base == NULL)
-		if ((fp->base = (char *) malloc(bufsize)) == NULL)
-			return EOF;
-	fp->ptr = fp->base;
-	fp->cnt = read(fp->fd, fp->ptr, bufsize);
-	if (--fp->cnt < 0) {
-		if (fp->cnt == -1)
+    if (fp->base == NULL)
+        if ((fp->base = (char *) malloc(bufsize)) == NULL)
+            return EOF;
+    fp->ptr = fp->base;
+    fp->cnt = read(fp->fd, fp->ptr, bufsize);
+    if (--fp->cnt < 0) {
+        if (fp->cnt == -1)
             fp->flag._EOF = 1;
-		else
+        else
             fp->flag._ERR = 1;
-		fp->cnt = 0;
-		return EOF;
-	}
-	return (unsigned char) *fp->ptr++;
+        fp->cnt = 0;
+        return EOF;
+    }
+    return (unsigned char) *fp->ptr++;
 }
