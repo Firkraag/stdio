@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include "stdio.h"
 
-int _fillbuf(FILE *fp) {
+int _fillbuf(FILE *fp)
+{
     int bufsize;
 
     if (!fp->flag._READ)
@@ -12,18 +13,22 @@ int _fillbuf(FILE *fp) {
     if (fp->flag._ERR)
         return EOF;
 
-    if (fp->flag._BUFTYPE == UNBUF) {
+    if (fp->flag._BUFTYPE == UNBUF)
+    {
         bufsize = 1;
-    } else {
+    }
+    else
+    {
         bufsize = BUFSIZ;
     }
 
     if (fp->base == NULL)
-        if ((fp->base = (char *) malloc(bufsize)) == NULL)
+        if ((fp->base = (char *)malloc(bufsize)) == NULL)
             return EOF;
     fp->ptr = fp->base;
     fp->cnt = read(fp->fd, fp->ptr, bufsize);
-    if (--fp->cnt < 0) {
+    if (--fp->cnt < 0)
+    {
         if (fp->cnt == -1)
             fp->flag._EOF = 1;
         else
